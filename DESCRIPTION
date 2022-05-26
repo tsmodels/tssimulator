@@ -1,0 +1,13 @@
+Package: tssimulator
+Type: Package
+Title: Time Series Simulation
+Version: 0.1.0
+Author: alexios galanos
+Maintainer: alexios galanos <alexios@4dscape.com>
+Description: Allows the easy generation of random time series under a number of data generating processes and mixtures.
+Imports: tsaux, data.table, zoo, xts
+Depends: methods, tsmethods
+License: GPL-2 | file LICENSE
+Encoding: UTF-8
+RoxygenNote: 7.2.0
+Remotes: tsmodels/tsmethods, tsmodels/tsaux

@@ -1,0 +1,25 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+version <- as.vector(read.dcf('DESCRIPTION')[, 'Version'])
+version <- gsub('-', '.', version)
+```
+
+[![R-CMD-check](https://github.com/tsmodels/tssimulator/workflows/R-CMD-check/badge.svg)](https://github.com/tsmodels/tssimulator/actions)
+[![Last-changedate](https://img.shields.io/badge/last%20change-`r gsub('-', '--', Sys.Date())`-yellowgreen.svg)](/commits/master)
+[![packageversion](https://img.shields.io/badge/Package%20version-`r version`-orange.svg?style=flat-square)](commits/master)
+[![CRAN_Status_Badge](https://www.r-pkg.org/badges/version/tssimulator)](https://cran.r-project.org/package=tssimulator)
+
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# tssimulator
+Easy generation of random time series under a number of dynamics and mixtures.
