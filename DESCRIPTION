@@ -7,6 +7,7 @@ Maintainer: alexios galanos <alexios@4dscape.com>
 Description: Allows the easy generation of random time series under a number of data generating processes and mixtures.
 Imports: tsaux, data.table, zoo, xts
 Depends: methods, tsmethods
+Suggests: magrittr
 License: GPL-2 | file LICENSE
 Encoding: UTF-8
 RoxygenNote: 7.2.0
