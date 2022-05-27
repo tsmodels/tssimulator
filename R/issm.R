@@ -409,18 +409,40 @@ tsdecompose.tsissm.component <- function(object, ...)
 #' @export
 #'
 #'
-plot.tsissm.component <- function(x, y = NULL, type = c("simulated","components"), ...)
+plot.tsissm.component <- function(x, y = c("simulated","components"), ...)
 {
-  type <- match.arg(type[1], c("simulated","components"))
-  if (type == "simulated") {
-    y <- x$simulated
+  y <- match.arg(y[1], c("simulated","components"))
+  if (y == "simulated") {
+    s <- x$simulated
     if (!is.null(x$index)) {
-      y <- xts(y, x$index)
+      s <- xts(s, x$index)
     }
   } else {
-    y <- tsdecompose(x)
+    s <- tsdecompose(x)
   }
-  simulated <- as.zoo(y)
+  simulated <- as.zoo(s)
   plot(simulated, plot.type	 = "multiple", xlab = "", ...)
   grid()
+}
+
+#' Add Connected Line Segments to a Simulation Object
+#'
+#' @param x an object of class tsissm.component or other supported class.
+#' @param y not used.
+#' @param type character indicating the type of plotting.
+#' @param ... additional parameters passed to the lines function.
+#' @method lines tsissm.component
+#' @aliases lines
+#' @rdname lines
+#' @export
+#'
+#'
+lines.tsissm.component <- function(x, y = NULL, type = "l", ...)
+{
+  s <- x$simulated
+  if (!is.null(x$index)) {
+    s <- xts(s, x$index)
+  }
+  simulated <- as.zoo(s)
+  lines(simulated, type = type, ...)
 }
