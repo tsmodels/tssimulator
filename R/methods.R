@@ -42,3 +42,13 @@ add_transform <- function(x, ...)
 {
   UseMethod("add_transform")
 }
+
+
+#' @rdname add_anomaly
+#' @export
+#'
+#'
+add_anomaly <- function(x, ...)
+{
+  UseMethod("add_anomaly")
+}

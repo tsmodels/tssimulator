@@ -389,6 +389,11 @@ tsdecompose.tsissm.component <- function(object, ...)
   if (any(cnames  == "ARMA")) {
     Irregular <- Irregular + components[2:n,"ARMA"]
   }
+  if (any(substr(cnames,1,2) %in% c("AO","LS","TC"))) {
+    use <- which(substr(cnames,1,2) %in% c("AO","LS","TC"))
+    anomalies <- rowSums(components[2:n, use, drop = FALSE])
+    new_components <- cbind(new_components, anomalies)
+  }
   new_components <- cbind(new_components, Irregular)
   if (!is.null(object$index)) {
     new_components <- xts(new_components, object$index)
@@ -400,8 +405,7 @@ tsdecompose.tsissm.component <- function(object, ...)
 #' Plot Simulation Object
 #'
 #' @param x an object of class tsissm.component or other supported class.
-#' @param y not used.
-#' @param type the type of output to plot.
+#' @param y the type of output to plot.
 #' @param ... additional parameters passed to the \code{\link{plot.zoo}} function.
 #' @method plot tsissm.component
 #' @aliases plot

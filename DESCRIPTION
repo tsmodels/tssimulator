@@ -1,7 +1,7 @@
 Package: tssimulator
 Type: Package
 Title: Time Series Simulation
-Version: 0.1.0
+Version: 0.2.1
 Author: alexios galanos
 Maintainer: alexios galanos <alexios@4dscape.com>
 Description: Allows the easy generation of random time series under a number of data generating processes and mixtures.

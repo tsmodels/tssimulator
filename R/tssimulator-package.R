@@ -4,9 +4,9 @@
 #' @importFrom zoo coredata index as.zoo plot.zoo
 #' @importFrom xts xts
 #' @importFrom tsaux future_dates fourier_series tstransform
-#' @importFrom stats arima.sim rnorm na.omit sd
+#' @importFrom stats arima.sim rnorm na.omit sd filter
 #' @importFrom utils tail
-#' @importFrom graphics grid
+#' @importFrom graphics grid lines
 #' @import tsmethods
 #' @examples
 #' library(magrittr)

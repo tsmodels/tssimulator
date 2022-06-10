@@ -10,11 +10,9 @@
 \arguments{
 \item{x}{an object of class tsissm.component or other supported class.}
 
-\item{y}{not used.}
+\item{y}{the type of output to plot.}
 
 \item{...}{additional parameters passed to the \code{\link{plot.zoo}} function.}
-
-\item{type}{the type of output to plot.}
 }
 \description{
 Plot Simulation Object
